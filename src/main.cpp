@@ -81,4 +81,27 @@ int main()
         std::cout << "2.3---------------------\n";
     }
     std::cout << "2.4---------------------\n";
+
+    //------------ operator= ------------------
+
+	{
+		auto ptrToy = shared_ptr_toy(new Toy);
+		auto ptrToy_2 = shared_ptr_toy(new Toy);
+		auto ptrToy_3(ptrToy_2);
+		{
+			ptrToy_3 = ptrToy;
+		}
+		std::cout << "3.1---------------------\n";
+	}
+	std::cout << "3.2---------------------\n";
+
+	{
+		auto ptrToy = shared_ptr_toy(new Toy);
+		auto ptrToy_2 = shared_ptr_toy(new Toy);
+		{
+			ptrToy = ptrToy_2;
+		}
+		std::cout << "4.1---------------------\n";
+	}
+	std::cout << "4.2---------------------\n";
 }

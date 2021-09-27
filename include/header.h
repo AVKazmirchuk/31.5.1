@@ -64,6 +64,16 @@ public:
     {
         if (this == &obj) return *this;
 
+        if (ptr)
+        {
+            if (*count > 1) --(*count);
+            else
+            {
+                delete count;
+                delete ptr;
+            }
+        }
+
         initial(obj);
 
         return *this;
